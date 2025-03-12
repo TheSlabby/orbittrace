@@ -56,7 +56,7 @@ function BillboardText({text, visibleRef, targetPositionRef, color = '#00ff00', 
     const textRef = useRef();
 
     useFrame((state, delta) => {
-        const offsetVector = new Vector3(-1.6, .3, -.9);
+        const offsetVector = new Vector3(-1.9, .3, -.9);
         offsetVector.applyQuaternion(state.camera.quaternion); // make it relative to camera
         const goalPosition = targetPositionRef.current.clone().add(offsetVector.multiplyScalar(7));
 
@@ -139,7 +139,7 @@ export default function Tracker() {
                 if (camView.current == 'follow') {
                     camPosition.current = new Vector3(camX, camY, camZ);
                 } else if (camView.current == 'fixed') {
-                    camPosition.current = new Vector3(0, 0, 150);
+                    camPosition.current = new Vector3(0, 0, 200);
                 }
 
                 setBillboardText(`Velocity: ${vel.toFixed(2)} kph\nLatitude: ${lat.toFixed(3)}\nLongitude: ${lon.toFixed(3)}\nAltitude: ${alt.toFixed(1)}`);
@@ -163,7 +163,7 @@ export default function Tracker() {
     const changeCamView = () => {
         if (camView.current == 'follow') {
             camView.current = 'fixed';
-            camPosition.current = new Vector3(0, 0, 150);
+            camPosition.current = new Vector3(0, 0, 200);
         } else {
             camView.current = 'follow';
             camPosition.current.copy(issPosition.current);
@@ -189,7 +189,7 @@ export default function Tracker() {
                 <ambientLight intensity={0.4} />
                 <PointCamera target={issPosition} camPosition={camPosition} />
                 <directionalLight
-                    position={[0, 300, 0]}           // Position to mimic sunlight angle
+                    position={[200, 100, 200]}           // Position to mimic sunlight angle
                     intensity={2.5}                   // Brighter but not overpowering
                     color="#ffffff"                   // Pure white light (default)
                 />
