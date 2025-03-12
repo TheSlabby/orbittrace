@@ -6,7 +6,7 @@ import { Object3D, Vector3 } from "three";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-// import { Button } from "@heroui/button";
+import Button from '@/components/Button'
 
 function SatelliteModel() {
   const ROTATION_SPEED = 0.5;
@@ -67,15 +67,9 @@ export default function Home() {
         </section>
 
         <section className="mt-12 flex justify-center">
-          <button
-            className="px-6 cursor-pointer py-2 bg-indigo-600 text-white font-medium rounded-lg shadow-md 
-                   hover:bg-indigo-700 hover:shadow-lg 
-                   focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75 
-                   transition-all duration-300 ease-in-out"
-            onClick={handleClick}
-            >
+          <Button onClick={handleClick}>
             View the Tracker
-          </button>
+          </Button>
         </section>
 
       </main>
