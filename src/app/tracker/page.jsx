@@ -181,8 +181,8 @@ export default function Tracker() {
         <div className="w-full h-[calc(100vh-4rem)]">
             <div className="fixed ml-3 mt-3 flex flex-col gap-2">
                 <p className="text-4xl font-light text-center">OrbitTrace</p>
-                <Button color="blue-800" onClick={changeCamView}>Change Camera View</Button>
-                <Button color="indigo-600" onClick={toggleTelemetry}>Toggle Telemtry</Button>
+                <Button className="shadow-xl bg-blue-800" onClick={changeCamView}>Change Camera View</Button>
+                <Button className="shadow-xl bg-indigo-600" onClick={toggleTelemetry}>Toggle Telemtry</Button>
             </div>
             <Canvas camera={{ position: new Vector3(0, 200, 0), fov: 50}}
                     style={{position: 'absolute', top: 0, left: 0, zIndex: -1}}>

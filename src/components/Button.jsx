@@ -19,13 +19,13 @@ const buttonVariants = {
     }
 }
 
-export default function Button({ children, color = 'indigo-600', className = '', ...props}) {
+export default function Button({ children, className = '', ...props}) {
     return (
         <motion.button
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
-            className={`px-4 cursor-pointer py-2 rounded-2xl shadow-xl bg-${color} text-white font-bold focus:ring-2 ${className}`}
+            className={`px-4 cursor-pointer py-2 rounded-2xl shadow-xl text-white font-bold focus:ring-2 ${className}`}
             {...props}
         >
             {children}

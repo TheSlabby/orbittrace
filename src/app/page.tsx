@@ -67,7 +67,7 @@ export default function Home() {
         </section>
 
         <section className="mt-12 flex justify-center">
-          <Button onClick={handleClick}>
+          <Button className="bg-indigo-600" onClick={handleClick}>
             View the Tracker
           </Button>
         </section>
